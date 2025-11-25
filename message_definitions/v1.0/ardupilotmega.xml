@@ -2066,5 +2066,36 @@
       <field type="char[10]" name="name" instance="true">Name of the debug variable</field>
       <field type="char[64]" name="value">Value of the debug variable</field>
     </message>
+        <!-- Custom detection message -->
+    <!-- Custom detection message aligned with QGC DetectedObject -->
+    <message id="42001" name="DETECTED_OBJECT">
+        <description>
+            Single detected object with georeferenced position.
+            Designed to map directly to QGC's DetectedObject class.
+        </description>
+
+        <!-- DetectedObject::_id -->
+        <field type="uint8_t"  name="id">Object ID</field>
+
+        <!-- DetectedObject::_coord (QGeoCoordinate) -->
+        <!-- Use standard MAVLink degE7 convention -->
+        <field type="int32_t"  name="lat">Latitude (WGS84), in degrees * 1E7</field>
+        <field type="int32_t"  name="lon">Longitude (WGS84), in degrees * 1E7</field>
+        <field type="float"    name="alt">Altitude [m]</field>
+
+        <!-- DetectedObject::_type -->
+        <field type="uint8_t"  name="type">Object type (project-specific enumeration)</field>
+
+        <!-- DetectedObject::_confidence -->
+        <field type="uint8_t"  name="confidence">Detection confidence [0-100]</field>
+
+        <!-- DetectedObject::_name -->
+        <field type="char[32]" name="name">Short object label (UTF-8, null-terminated)</field>
+
+        <!-- DetectedObject::_info1/_info2/_info3 -->
+        <field type="char[32]" name="info1">Extra info field 1</field>
+        <field type="char[32]" name="info2">Extra info field 2</field>
+        <field type="char[32]" name="info3">Extra info field 3</field>
+    </message>
   </messages>
 </mavlink>
