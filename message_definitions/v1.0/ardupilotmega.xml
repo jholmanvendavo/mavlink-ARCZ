@@ -2068,7 +2068,7 @@
     </message>
         <!-- Custom detection message -->
     <!-- Custom detection message aligned with QGC DetectedObject -->
-    <message id="42001" name="DETECTED_OBJECT">
+    <message id="60010" name="DETECTED_OBJECT">
         <description>
             Single detected object with georeferenced position.
             Designed to map directly to QGC's DetectedObject class.
